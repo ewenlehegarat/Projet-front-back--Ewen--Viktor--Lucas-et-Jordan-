@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
 /* ###### Global ###### */
 *{
     margin: 0;
@@ -6,11 +8,78 @@
 }
 
 :root{
-    --Black: #000;
-    --White: #fff;
+    
+    /* ### Color ###*/
+    --Color-1: #283F3B;
+    --Color-2: #8BA27C;
+    --Color-3: #E9EDE5;
+    --Color-4: #F5F5F5;
+    --Color-5: #FFF8EA;
+
+    /* ### Font Size ### */
+    --fs-10: 10px;
+    --fs-12: 12px;
+    --fs-16: 16px;
+    --fs-20: 20px;
+    --fs-24: 24px;
+    --fs-28: 28px;
+    --fs-32: 32px;
+    --fs-40: 40px;
+    --fs-48: 48px;
+
+    /* ### Font Weight ### */
+    --fw-Black: 900;
+    --fw-Bold: 700;
+    --fw-Semi-Bold: 600;
+    --fw-Medium: 500;
+    --fw-Light: 300;
+    --fw-Extra-Light: 200;
+    --fw-Thin: 100;
+
+    /* ### Font Family */
+    --ff-Out-Fit: "Outfit", sans-serif;
 }
 
 /* ###### Body ###### */
 body{
+    font-family: var(--ff-Out-Fit);
 
+    h1{
+        font-size: var(--fs-48);
+        font-weight: var(--Fw-Black);
+    }
+    h2{
+    font-size: var(--fs-40);
+        font-weight: var(--Fw-Bold);
+    }
+    h3{
+        font-size: var(--fs-32);
+        font-weight: var(--fw-Semi-Bold);
+    }
+    h4{
+        font-size: var(--fs-24);
+        font-weight: var(--fw-Medium);
+    }
+    .paragraph_1{
+        font-size: var(--fs-20);
+        font-weight: var(--fw-Light);
+    }
+    .paragraph_2{
+        font-size: var(--fs-16);
+        font-weight: var(--fw-Extra-Light);
+    }
+    .caption{
+        font-size: var(--fs-12);
+        font-weight: var(--fw-Thin);
+    }
+}
+
+/* ###### Nav ###### */
+nav{
+    display: flex;a
+    align-content: ;
+
+    .dropdown_content{
+        display: none;
+    }
 }
