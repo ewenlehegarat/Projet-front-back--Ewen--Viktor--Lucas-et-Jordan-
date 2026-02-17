@@ -41,19 +41,6 @@
     --ff-Out-Fit: "Outfit", sans-serif;
 }
 
-body.light_mode{
-    background-color: white;
-    color: var(--Color-1);
-}
-
-body.dark_mode{
-    color: var(--Color-4);
-
-    nav{
-        background-color: var(--Color-1);
-    }
-}
-
 /* ###### Body ###### */
 body{
     font-family: var(--ff-Out-Fit);
@@ -92,15 +79,55 @@ body{
     }
 }
 
+/* ###### Light Mode ###### */
+body.light_mode{
+    background-color: white;
+    color: var(--Color-1);
+
+    nav{
+        background-color: var(--Color-4);
+    
+        a{
+            color: var(--Color-1);
+        }
+        span{
+            color: var(--Color-1);
+        }
+        .dropdown_content{
+            border-color: var(--Color-1);
+            background-color: var(--Color-4);
+        }
+    }
+}
+
+/* ###### Dark Mode ###### */
+body.dark_mode{
+    color: var(--Color-4);
+
+    nav{
+        background-color: var(--Color-1);
+
+        a{
+            color: var(--Color-4);
+        }
+        span{
+            color: var(--Color-4);
+        }
+        .dropdown_content{
+            border-color: var(--Color-4);
+            background-color: var(--Color-1);
+        }
+    }
+}
+
+
 /* ###### Nav ###### */
 nav{
     position: fixed;
     width: 100%;
     z-index: 50;
-    background-color: var(--Color-4);
     box-shadow: 0 5px 10px #00000025;
 
-    
     h3{
         cursor: pointer;
     }
@@ -165,11 +192,10 @@ nav{
                 left: -110%;
                 top: 57px;
                 transition: left ease 300ms;
-                background-color: var(--Color-4);
                 width: 100%;
                 height: 300px;
                 z-index: 30;
-                border-top: 2px solid var(--Color-1);
+                border-top: 2px solid;
                 box-shadow: 0 5px 10px #00000025;
             }
         }
@@ -191,6 +217,20 @@ nav{
 
                 a{
                     text-decoration: none;
+                    position: relative;
+                }
+                a::after{
+                    content: '';
+                    position: absolute;
+                    bottom: -20.8px;
+                    left: 0;
+                    width: 0px;
+                    height: 3px;
+                    background-color: var(--Color-1);
+                    transition: width ease-out 300ms;
+                }
+                a:hover::after{
+                    width: 100%;
                 }
             }
         }
@@ -213,7 +253,7 @@ nav input:checked ~ .dropdown_content{
 
 nav input:checked ~ label span:first-child{
     transform: rotate(45deg);
-    top: 6px;
+    top: 50%;
 }
 
 nav input:checked ~ label span:nth-child(2){
@@ -222,7 +262,35 @@ nav input:checked ~ label span:nth-child(2){
 
 nav input:checked ~ label span:nth-child(3){
     transform: rotate(-45deg);
-    top: 6px;
+    top: 50%;
+}
+
+/* ###### Main ###### */
+main{
+    padding-top: 62.4px;
+}
+
+/* ###### Footer ###### */
+footer{
+    margin-top: 1000px;
+    background-color: var(--Color-1);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 48px 32px;
+
+    .reseaux{
+        display: flex;
+        gap: 8px;
+
+        ion-icon{
+            font-size: 18px;
+        }
+    }
+    .mention{
+        display: flex;
+        gap: 16px;
+    }
 }
 
 @media screen and (min-width: 700px){
