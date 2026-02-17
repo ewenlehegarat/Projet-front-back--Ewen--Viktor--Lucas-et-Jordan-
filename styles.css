@@ -41,11 +41,27 @@
     --ff-Out-Fit: "Outfit", sans-serif;
 }
 
+body.light_mode{
+    background-color: white;
+    color: var(--Color-1);
+}
+
+body.dark_mode{
+    color: var(--Color-4);
+
+    nav{
+        background-color: var(--Color-1);
+    }
+}
+
 /* ###### Body ###### */
 body{
     font-family: var(--ff-Out-Fit);
     color: var(--Color-1);
 
+    a{
+        color: var(--Color-1);
+    }
     h1, .header_1{
         font-size: var(--fs-48);
         font-weight: var(--Fw-Black);
@@ -84,6 +100,10 @@ nav{
     background-color: var(--Color-4);
     box-shadow: 0 5px 10px #00000025;
 
+    
+    h3{
+        cursor: pointer;
+    }
     .navigation_mobile{
         display: flex;
         justify-content: space-between;
@@ -94,7 +114,7 @@ nav{
         .right{
             display: flex;
             gap: 16px;
-            
+
             ion-icon{
                 cursor: pointer;
                 transition: color ease-out 300ms;
@@ -156,6 +176,34 @@ nav{
     }
     .navigation_desktop{
         display: none;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 32px;
+
+        .left{
+            display: flex;
+            gap: 24px;
+            align-items: center;
+
+            .links{
+                display: flex;
+                gap: 24px;
+
+                a{
+                    text-decoration: none;
+                }
+            }
+        }
+        .right{
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 30px;
+
+            ion-icon{
+                cursor: pointer;
+            }
+        }
     }
 }
 
@@ -212,8 +260,6 @@ nav input:checked ~ label span:nth-child(3){
         }
         .navigation_desktop{
             display: flex;
-            justify-content: space-between;
-            align-items: center;
         }
     }
 }

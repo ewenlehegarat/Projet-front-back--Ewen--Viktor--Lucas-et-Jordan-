@@ -1,0 +1,1 @@
+const buttonDarkMode = document.querySelectorAll('.icon_dark_mode')

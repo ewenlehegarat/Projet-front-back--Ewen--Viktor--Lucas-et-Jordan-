@@ -11,13 +11,13 @@
     <script src="main.js" defer></script>
 </head>
 
-<body>
+<body class="light_mode">
     
     <nav>
         <div class="navigation_mobile">
             <h3>Logo</h3>
             <div class="right">
-                <ion-icon name="moon-outline" class="header_4"></ion-icon>
+                <ion-icon name="moon-outline" class="header_4" class="icon_dark_mode"></ion-icon>
                 <input type="checkbox" id="burger">
                 <label for="burger">
                     <span></span>
@@ -34,11 +34,16 @@
         <div class="navigation_desktop">
             <div class="left">
                 <h3>logo</h3>
-                <a href="#">Home</a>
-                <a href="#">Entreprise</a>
-                <a href="#">Lorem</a>
+                <div class="links">
+                    <a href="#" class="paragraph_1">Home</a>
+                    <a href="#" class="paragraph_1">Entreprise</a>
+                    <a href="#" class="paragraph_1">Lorem</a>
+                </div>
             </div>
-            <div class="right"></div>
+            <div class="right">
+                <ion-icon name="moon-outline" class="icon_dark_mode"></ion-icon>
+                <ion-icon name="person-outline"></ion-icon>
+            </div>
         </div>
     </nav>
 
