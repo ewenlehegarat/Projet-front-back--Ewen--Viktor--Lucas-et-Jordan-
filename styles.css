@@ -23,6 +23,7 @@
     --fs-20: 20px;
     --fs-24: 24px;
     --fs-28: 28px;
+    --fs-30: 30px;
     --fs-32: 32px;
     --fs-40: 40px;
     --fs-48: 48px;
@@ -43,20 +44,21 @@
 /* ###### Body ###### */
 body{
     font-family: var(--ff-Out-Fit);
+    color: var(--Color-1);
 
-    h1{
+    h1, .header_1{
         font-size: var(--fs-48);
         font-weight: var(--Fw-Black);
     }
-    h2{
+    h2, .header_2{
     font-size: var(--fs-40);
         font-weight: var(--Fw-Bold);
     }
-    h3{
+    h3, .header_3{
         font-size: var(--fs-32);
         font-weight: var(--fw-Semi-Bold);
     }
-    h4{
+    h4, .header_4{
         font-size: var(--fs-24);
         font-weight: var(--fw-Medium);
     }
@@ -76,21 +78,142 @@ body{
 
 /* ###### Nav ###### */
 nav{
-    display: flex;
-    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 50;
+    background-color: var(--Color-4);
+    box-shadow: 0 5px 10px #00000025;
 
-    .dropdown_content{
+    .navigation_mobile{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        padding: 8px;
+
+        .right{
+            display: flex;
+            gap: 16px;
+            
+            ion-icon{
+                cursor: pointer;
+                transition: color ease-out 300ms;
+            }
+            ion-icon:hover{
+                color: var(--Color-2);
+            }
+            input{
+                width: 30px;
+                height: 30px;
+                position: absolute;
+                top: 13px;
+                right: 8px;
+                opacity: 0;
+            }
+            label{
+                width: 30px;
+                height: 20px;
+                position: relative;
+                cursor: pointer;
+                
+                span{
+                    width: 100%;
+                    height: 2.5px;
+                    background-color: var(--Color-1);
+                    position: absolute;
+                    left: 0;
+                    border-radius: 50px;
+                    transition: 0.3s;
+                }
+                span:first-child{
+                    top: 0;
+                }
+                span:nth-child(2){
+                    top: 50%;
+                }
+                span:nth-child(3){
+                    top: 100%;
+                }
+            }
+            .dropdown_content{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+                padding: 15px 0;
+                position: absolute;
+                left: -110%;
+                top: 57px;
+                transition: left ease 300ms;
+                background-color: var(--Color-4);
+                width: 100%;
+                height: 300px;
+                z-index: 30;
+                border-top: 2px solid var(--Color-1);
+                box-shadow: 0 5px 10px #00000025;
+            }
+        }
+    }
+    .navigation_desktop{
         display: none;
     }
+}
 
-    label{
-        width: 30px;
-        height: 20px;
+nav input:checked ~ .dropdown_content{
+    left: 0;
+}
 
-        span{
-            width: 100%;
-            height: 1px;
-            background-color: var(--Color-1);
+nav input:checked ~ label span:first-child{
+    transform: rotate(45deg);
+    top: 6px;
+}
+
+nav input:checked ~ label span:nth-child(2){
+    opacity: 0;
+}
+
+nav input:checked ~ label span:nth-child(3){
+    transform: rotate(-45deg);
+    top: 6px;
+}
+
+@media screen and (min-width: 700px){
+    
+    /* ###### Body ###### */
+    body{
+
+        h1, .header_1{
+            font-size: var(--fs-30);
+        }
+        h2, .header_2{
+            font-size: var(--fs-28);
+        }
+        h3, .header_3{
+            font-size: var(--fs-24);
+        }
+        h4, .header_4{
+            font-size: var(--fs-16);
+        }
+        .paragraph_1{
+            font-size: var(--fs-16);
+        }
+        .paragraph_2{
+            font-size: var(--fs-12);
+        }
+        .caption{
+            font-size: var(--fs-10);
+        }
+    }
+
+    /* ###### Nav ###### */
+    nav{
+        .navigation_mobile{
+            display: none;
+        }
+        .navigation_desktop{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
     }
 }

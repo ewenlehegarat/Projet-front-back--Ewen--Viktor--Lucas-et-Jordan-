@@ -6,25 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projet groupe</title>
     <link rel="stylesheet" href="styles.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="main.js" defer></script>
 </head>
 
 <body>
     
     <nav>
-        <div class="nav_mobile">
+        <div class="navigation_mobile">
             <h3>Logo</h3>
-            <input type="checkbox" id="burger">
-            <label for="burger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </label>
-            <div class="dropdown_content">
-                <a href="#">Lorem</a>
-                <a href="#">Lorem</a>
+            <div class="right">
+                <ion-icon name="moon-outline" class="header_4"></ion-icon>
+                <input type="checkbox" id="burger">
+                <label for="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <div class="dropdown_content">
+                    <a href="#">Lorem</a>
+                    <a href="#">Lorem</a>
+                    <a href="#">Lorem</a>
+                </div>
+            </div>
+        </div>
+        <div class="navigation_desktop">
+            <div class="left">
+                <h3>logo</h3>
+                <a href="#">Home</a>
+                <a href="#">Entreprise</a>
                 <a href="#">Lorem</a>
             </div>
+            <div class="right"></div>
         </div>
     </nav>
 
