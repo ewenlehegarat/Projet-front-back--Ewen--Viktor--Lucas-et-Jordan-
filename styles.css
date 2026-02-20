@@ -53,11 +53,11 @@ body{
     }
     .header_1{
         font-size: var(--fs-30);
-        font-weight: var(--Fw-Black);
+        font-weight: var(--fw-Black);
     }
     .header_2{
         font-size: var(--fs-28);
-        font-weight: var(--Fw-Bold);
+        font-weight: var(--fw-Bold);
     }
     .header_3{
         font-size: var(--fs-24);
@@ -133,6 +133,9 @@ nav{
     width: 100%;
     z-index: 50;
     box-shadow: 0 5px 10px #00000025;
+    translate: 0 -150px;
+    opacity: 0;
+    transition: translate cubic-bezier(0, 0, 0, 1) 600ms, opacity cubic-bezier(0, 0, 0, 1) 600ms;
 
     h3{
         cursor: pointer;
@@ -154,6 +157,11 @@ nav{
             color: var(--Color-2);
         }
     }
+}
+
+nav.view{
+    translate: 0;
+    opacity: 1;
 }
 
 nav input:checked ~ .dropdown_content{
@@ -180,11 +188,14 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-
+    
     .candidatures_tables{
         display: flex;
         flex-direction: column;
         color: var(--Black);
+        opacity: 0;
+        translate: 250px 0;
+        transition: 500ms translate 600ms ease, 500ms opacity 600ms ease;
         
         .top{
             display: flex;
@@ -229,7 +240,7 @@ main{
                     gap: 25px;
                     border: 3px solid var(--Black);
                     cursor: pointer;
-                    transition: translate ease 500ms;
+                    transition: transform ease 500ms;
 
                     img{
                         width: 81px;
@@ -238,7 +249,7 @@ main{
                     }
                 }
                 .fiches:hover{
-                    translate: 0 -10px;
+                    transform: translateY(-10px);
                 }
                 .button_container{
                     display: flex;
@@ -267,6 +278,10 @@ main{
                 }
             }
         }
+    }
+    .candidatures_tables.view{
+        translate: 0;
+        opacity: 1;
     }
 }
 
