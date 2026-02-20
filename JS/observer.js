@@ -9,7 +9,6 @@ export function observe() {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
         entry.target.classList.add("view");
-        // optionnel : arrêter l’observation après l’animation
         observer.unobserve(entry.target);
         }
     });
